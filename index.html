@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Name Value Calculator</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Name Value Calculator</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>Name Value Calculator</h1>
-        <p>Enter your name to calculate its total value based on a custom alphabet system.</p>
-        <input type="text" id="nameInput" placeholder="Enter your name here" />
-        <button onclick="calculateValue()">Calculate</button>
-        <div id="output"></div>
+  <div class="container">
+    <h1>Name Value Calculator</h1>
+    <p>Enter your name to calculate its total value based on numerology.</p>
+    <input type="text" id="nameInput" placeholder="Enter your name here" />
+    <div class="buttons">
+      <button onclick="calculateValue()">Calculate</button>
+      <button onclick="resetForm()">Try Another Name</button>
     </div>
-    <script src="script.js"></script>
+    <div id="outputBox">
+      <div id="output"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
