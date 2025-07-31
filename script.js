@@ -24,7 +24,7 @@ const letterValues = {
     }
   
     const result = digitalRoot(total);
-    document.getElementById("output").textContent = `Your name's value is: ${result}`;
+    document.getElementById("output").textContent = `Your name value is: ${result}`;
     document.getElementById("outputBox").style.display = "block";
   }
   
