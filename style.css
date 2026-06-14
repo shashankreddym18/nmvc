@@ -50,8 +50,17 @@
     border-radius: 10px;
     background-color: #f9f9f9;
     color: #333;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
   }
-  
+
+  input:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.15);
+    transform: translateY(-1px);
+    background-color: #ffffff;
+  }
+
   input::placeholder {
     color: #aaa;
   }
@@ -69,6 +78,13 @@
     align-items: center;
     gap: 8px;
     margin-bottom: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.25s ease;
+  }
+
+  .dob-group.dob-group-active {
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.12);
+    border-radius: 10px;
   }
 
   .dob-group input {
@@ -100,6 +116,15 @@
     border-radius: 10px;
     background-color: #f9f9f9;
     color: #333;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+  }
+
+  select:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.15);
+    transform: translateY(-1px);
+    background-color: #ffffff;
   }
   
   .buttons {
@@ -136,6 +161,18 @@
     background-color: #f0f8ff;      /* Soft blue output box */
     display: none;
     border: 1px solid #007BFF;
+    animation: fadeInUp 0.4s ease;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   #outputBox h2 {

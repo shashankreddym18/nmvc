@@ -96,3 +96,45 @@ function resetForm() {
   document.getElementById('numerologyForm').reset();
   document.getElementById('outputBox').style.display = 'none';
 }
+
+// Auto-advance between DOB fields (DD -> MM -> YYYY -> Gender)
+const dobDay = document.getElementById('dobDay');
+const dobMonth = document.getElementById('dobMonth');
+const dobYear = document.getElementById('dobYear');
+const genderInput = document.getElementById('genderInput');
+
+function autoAdvance(field, maxLength, firstDigitLimit, next) {
+  field.addEventListener('input', () => {
+    let value = field.value.replace(/[^0-9]/g, '');
+    if (value.length > maxLength) value = value.slice(0, maxLength);
+    field.value = value;
+
+    const shouldAdvance =
+      value.length === maxLength ||
+      (value.length === 1 && parseInt(value, 10) > firstDigitLimit);
+
+    if (shouldAdvance && next) {
+      next.focus();
+      if (next.select) next.select();
+    }
+  });
+
+  field.addEventListener('keydown', (e) => {
+    if (e.key === 'Backspace' && field.value === '' && field.previousField) {
+      field.previousField.focus();
+    }
+  });
+}
+
+dobMonth.previousField = dobDay;
+dobYear.previousField = dobMonth;
+
+autoAdvance(dobDay, 2, 3, dobMonth);   // days 4-9 can't have a second digit
+autoAdvance(dobMonth, 2, 1, dobYear);  // months 2-9 can't have a second digit
+autoAdvance(dobYear, 4, 9, genderInput);
+
+// Highlight the active field with a lively glow effect
+[dobDay, dobMonth, dobYear].forEach(field => {
+  field.addEventListener('focus', () => field.parentElement.classList.add('dob-group-active'));
+  field.addEventListener('blur', () => field.parentElement.classList.remove('dob-group-active'));
+});
