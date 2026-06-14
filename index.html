@@ -3,59 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Numerology Calculator</title>
+  <title>Name Value Calculator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Numerology Calculator</h1>
-    <p>Enter your details to generate your numerology report and birth chart.</p>
-
-    <form id="numerologyForm">
-      <input type="text" id="nameInput" placeholder="Enter your full name" required />
-      <label class="dob-label" for="dobDay">Date of Birth (DD/MM/YYYY)</label>
-      <div class="dob-group">
-        <input type="number" id="dobDay" inputmode="numeric" pattern="[0-9]*" placeholder="DD" min="1" max="31" required />
-        <span class="dob-separator">/</span>
-        <input type="number" id="dobMonth" inputmode="numeric" pattern="[0-9]*" placeholder="MM" min="1" max="12" required />
-        <span class="dob-separator">/</span>
-        <input type="number" id="dobYear" inputmode="numeric" pattern="[0-9]*" placeholder="YYYY" min="1000" max="9999" required />
-      </div>
-      <select id="genderInput" required>
-        <option value="" disabled selected>Select Gender</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-      </select>
-      <div class="buttons">
-        <button type="submit">Calculate</button>
-        <button type="button" onclick="resetForm()">Reset</button>
-      </div>
-    </form>
-
+    <h1>Name Value Calculator</h1>
+    <p>Enter your name to calculate its total value based on numerology.</p>
+    <input type="text" id="nameInput" placeholder="Enter your name here" />
+    <div class="buttons">
+      <button onclick="calculateValue()">Calculate</button>
+      <button onclick="resetForm()">Try Another Name</button>
+    </div>
     <div id="outputBox">
-      <h2>Your Numerology Report</h2>
-
-      <div class="result-grid">
-        <div class="result-item">
-          <span>Driver Number</span>
-          <strong id="driverNumber"></strong>
-        </div>
-        <div class="result-item">
-          <span>Conductor Number</span>
-          <strong id="conductorNumber"></strong>
-        </div>
-        <div class="result-item">
-          <span>Kua Number</span>
-          <strong id="kuaNumber"></strong>
-        </div>
-        <div class="result-item">
-          <span>Name Number</span>
-          <strong id="nameNumber"></strong>
-        </div>
-      </div>
-
-      <h3>Birth Chart (Lo Shu Grid)</h3>
-      <div id="birthChart" class="lo-shu-grid"></div>
+      <div id="output"></div>
     </div>
   </div>
   <script src="script.js"></script>
