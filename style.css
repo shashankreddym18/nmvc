@@ -231,6 +231,47 @@
     color: #004085;
   }
 
+  .report-section {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #cfe6ff;
+    text-align: left;
+  }
+
+  .report-section h3 {
+    color: #004085;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .report-section h4 {
+    color: #0056b3;
+    margin: 12px 0 6px;
+    font-size: 15px;
+  }
+
+  .report-subtitle {
+    text-align: center;
+    color: #555555;
+    margin-bottom: 10px;
+  }
+
+  .report-section ul {
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+
+  .report-section li {
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+
+  .report-section p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    text-align: left;
+  }
+
   /* Tablets (iPad and similar) */
   @media (max-width: 768px) {
     .container {
